@@ -24,7 +24,7 @@
           <button class="btn btn-info" type="submit">Add Place</button>
         </form>
       </div>
-      <div class="col-md-6 placeDetail text-right">
+      <div class="col-md-6 placeDetail">
         <h2></h2>
           <div class="placeLocation">
             <h5>Location: <span></span></h5>
@@ -33,17 +33,21 @@
             <h5>Landmarks:</h5>
               <ul></ul>
           </div>
+          <br>
+          <br>
           <h4>Update</h4>
-          <form id="updatePlace">
+          <div class="updatePlace">
             <div class="form-group">
-              <label for="placeLocation">Location</label>
+              <label for="placeLocation">Location </label>
+              <br>
               <input type="text" id="placeLocation">
-
+              <br>
               <label for="placeLandmark">Landmark</label>
+              <br>
               <input type="text" id="placeLandmark">
             </div>
-            <button class="btn btn-info" type="submit">Update Place</button>
-          </form>
+            <span class="btn btn-info" id="updatePlace">Update</span>
+          </div>
 
       </div>
     </div>
