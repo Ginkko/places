@@ -1,14 +1,16 @@
-//raw js
-var foo = function(bar) {
-  "use strict";
-  return false;
-};
-
-
 //jQuery
 $( document ).ready(function() {
   "use strict";
-    console.log( "jQuery Ready" );
 
-    $("#jqtest").text("jQuery Ready");
+  $("form#addPlace").submit(function(event) {
+    event.preventDefault();
+    debugger;
+    var name = $("input#placeName").val();
+
+    var placesList = $("ul#placesList");
+    placesList.empty();
+    placesList.append("<li><span class='linkStyle'>" + name + "</span></li>");
+
+  });
+
 });

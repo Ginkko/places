@@ -2,3 +2,19 @@
   background-color: black;
   color: white;
 }
+
+h1 {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+span.linkStyle {
+  cursor: pointer;
+  color: #0088cc;
+}
+
+span.linkStyle:hover {
+  text-decoration: underline;
+}
