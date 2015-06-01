@@ -7,7 +7,7 @@ $( document ).ready(function() {
 
 
   $("#updatePlace").click(function() {
-alert(index);
+
     var location = $("input#placeLocation").val();
     if(location !== '') {
       $("input#placeLocation").val('');
@@ -18,6 +18,8 @@ alert(index);
       $("input#placeLandmark").val('');
       places[index].landmarks.push(landmark);
     }
+
+    refreshPlace();
   });
 
   $("form#addPlace").submit(function(event) {
@@ -32,18 +34,27 @@ alert(index);
 
   $("#placesList").on('click', '.place', function() {
     index = parseInt($(this).attr('id'));
+    refreshPlace();
+  });
+
+  var refreshPlace = function() {
+    $(".placeLocation").hide();
+
+
     var place = places[index];
     $(".placeDetail").show();
     $(".placeDetail h2").text(place.name);
 
-    $(".placeLocation").show();
-    $(".placeLocation span").text(place.location);
+    if (place.location !== undefined) {
+      $(".placeLocation").show();
+      $(".placeLocation span").text(place.location);
+    }
 
     $(".placeLandmarks").show();
     $(".placeLandmarks ul").empty();
     place.landmarks.forEach(function (landmark) {
       $(".placeLandmarks ul").append("<li>" + landmark + "</li>");
     });
-  });
+  };
 
 });
