@@ -17,23 +17,26 @@ $( document ).ready(function() {
 
       $("form#updatePlace").submit(function(event) {
         event.preventDefault();
-        var location = $("input#placeLocation").val();
-        $("input#placeLocation").val('');
 
-        newPlace['location'] = location;
-        $(".placeLocation").show();
-        $(".placeLocation span").text(newPlace.location);
+        var location = $("input#placeLocation").val();
+        if(location !== '') {
+          $("input#placeLocation").val('');
+          newPlace['location'] = location;
+          $(".placeLocation").show();
+          $(".placeLocation span").text(newPlace.location);
+        }
 
         var landmark = $("input#placeLandmark").val();
-        $("input#placeLandmark").val('');
+        if (landmark !== '') {
+          $("input#placeLandmark").val('');
 
-        newPlace.landmarks.push(landmark);
-        $(".placeLandmarks").show();
-        $(".placeLandmarks ul").empty();
-        newPlace.landmarks.forEach(function (landmark) {
-            $(".placeLandmarks ul").append("<li>" + landmark + "</li>");
-        });
-
+          newPlace.landmarks.push(landmark);
+          $(".placeLandmarks").show();
+          $(".placeLandmarks ul").empty();
+          newPlace.landmarks.forEach(function (landmark) {
+              $(".placeLandmarks ul").append("<li>" + landmark + "</li>");
+          });
+        }
 
       });
 
