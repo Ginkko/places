@@ -18,6 +18,7 @@ $( document ).ready(function() {
       $("form#updatePlace").submit(function(event) {
         event.preventDefault();
         var location = $("input#placeLocation").val();
+        $("input#placeLocation").val('');
 
         newPlace['location'] = location;
         $(".placeLocation").show();
