@@ -18,3 +18,11 @@ h1 {
 .place:hover {
   text-decoration: underline;
 }
+
+.placeDetail {
+  display: none;
+}
+
+.placeLocation {
+  display: none;
+}

@@ -15,8 +15,19 @@ $( document ).ready(function() {
       $(".placeDetail").show();
       $(".placeDetail h2").text(newPlace.name);
 
+      $("form#updatePlace").submit(function(event) {
+        event.preventDefault();
+        var location = $("input#placeLocation").val();
+
+        newPlace['location'] = location;
+        $(".placeLocation").show();
+        $(".placeLocation span").text(newPlace.location);
+      });
+
     });
 
   });
+
+
 
 });
