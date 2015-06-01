@@ -6,7 +6,7 @@ $( document ).ready(function() {
     event.preventDefault();
     var name = $("input#placeName").val();
     $("input#placeName").val('');
-    var newPlace = {name: name};
+    var newPlace = {name: name, landmarks: []};
 
     var placesList = $("ul#placesList");
     placesList.append("<li><span class='place'>" + newPlace.name + "</span></li>");
@@ -23,6 +23,18 @@ $( document ).ready(function() {
         newPlace['location'] = location;
         $(".placeLocation").show();
         $(".placeLocation span").text(newPlace.location);
+
+        var landmark = $("input#placeLandmark").val();
+        $("input#placeLandmark").val('');
+
+        newPlace.landmarks.push(landmark);
+        $(".placeLandmarks").show();
+        $(".placeLandmarks ul").empty();
+        newPlace.landmarks.forEach(function (landmark) {
+            $(".placeLandmarks ul").append("<li>" + landmark + "</li>");
+        });
+
+
       });
 
     });

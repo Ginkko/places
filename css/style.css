@@ -23,6 +23,6 @@ h1 {
   display: none;
 }
 
-.placeLocation {
+.placeLocation, .placeLandmarks {
   display: none;
 }
