@@ -6,9 +6,16 @@ $( document ).ready(function() {
     event.preventDefault();
     var name = $("input#placeName").val();
     $("input#placeName").val('');
-    var placesList = $("ul#placesList");
+    var newPlace = {name: name};
 
-    placesList.append("<li><span class='linkStyle'>" + name + "</span></li>");
+    var placesList = $("ul#placesList");
+    placesList.append("<li><span class='place'>" + newPlace.name + "</span></li>");
+
+    $(".place").last().click(function() {
+      $(".placeDetail").show();
+      $(".placeDetail h2").text(newPlace.name);
+
+    });
 
   });
 

@@ -10,11 +10,11 @@ h1 {
   text-align: center;
 }
 
-span.linkStyle {
+.place {
   cursor: pointer;
   color: #0088cc;
 }
 
-span.linkStyle:hover {
+.place:hover {
   text-decoration: underline;
 }
