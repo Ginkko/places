@@ -39,6 +39,7 @@ $( document ).ready(function() {
 
   var refreshPlace = function() {
     $(".placeLocation").hide();
+    $(".placeLandmarks").hide();
 
 
     var place = places[index];
@@ -50,11 +51,13 @@ $( document ).ready(function() {
       $(".placeLocation span").text(place.location);
     }
 
-    $(".placeLandmarks").show();
-    $(".placeLandmarks ul").empty();
-    place.landmarks.forEach(function (landmark) {
-      $(".placeLandmarks ul").append("<li>" + landmark + "</li>");
-    });
+    if (place.landmarks.length !== 0) {
+      $(".placeLandmarks").show();
+      $(".placeLandmarks ul").empty();
+      place.landmarks.forEach(function (landmark) {
+        $(".placeLandmarks ul").append("<li>" + landmark + "</li>");
+      });
+    }
   };
 
 });
